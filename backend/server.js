@@ -33,4 +33,4 @@ mongoose
     console.log(error);
   });
 
-module.exports = server;
+module.exports = app;
