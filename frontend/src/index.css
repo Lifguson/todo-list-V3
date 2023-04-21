@@ -1,0 +1,145 @@
+* {
+  text-decoration-line: none;
+  background-color: black;
+  color: white;
+  font-family: satoshiRegular;
+}
+
+@font-face {
+  font-family: satoshiRegular;
+  src: url(/public/font/Satoshi-Regular.ttf);
+}
+
+@font-face {
+  font-family: satoshiVariable;
+  src: url(/public/font/Satoshi-Variable.ttf);
+}
+
+.container {
+  text-align: center;
+}
+
+.nav {
+  justify-content: right;
+  margin-right: 2rem;
+  display: flex;
+}
+
+.nav div {
+  display: flex;
+  align-items: center;
+}
+
+.nav span {
+  margin-right: 10px;
+}
+
+.nav button {
+  border: 0px;
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 2px 0 red;
+
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.nav button:hover {
+  cursor: pointer;
+  background-color: #141414;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.task-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  height: 5vh;
+}
+
+.task-form input {
+  border: transparent;
+  background-color: white;
+  color: black;
+  outline: white;
+  border-radius: 6px;
+  width: 15vw;
+  padding: 15px;
+}
+
+.task-form button {
+  border-radius: 4px;
+  background-color: #141414;
+  border: 0px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  box-shadow: inset 0px 0px 2px 0 green;
+}
+
+.task-form button:hover {
+  transform: translateY(-2px);
+  text-shadow: 0px 0px 5px white;
+  cursor: pointer;
+}
+
+.task-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid transparent;
+  width: 35vw;
+  height: 5vh;
+  background-color: #141414;
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 2px 0 grey;
+}
+
+.task-details h4 {
+  background-color: #141414;
+}
+
+.task-details:hover {
+  color: gray;
+  opacity: 90%;
+  transform: translateY(-5px);
+  transition: 0.1s;
+  border-bottom: 2px solid grey;
+  border-radius: 12px;
+}
+
+.task-actions {
+  background-color: #141414;
+}
+
+.delete-button {
+  margin-right: 5px;
+  background-color: #141414;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #141414;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+}
