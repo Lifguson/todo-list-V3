@@ -28,6 +28,7 @@
 .nav div {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .nav span {
@@ -38,7 +39,7 @@
   border: 0px;
   border-radius: 4px;
   background-color: transparent;
-  box-shadow: inset 0px 0px 2px 0 red;
+  box-shadow: inset 0px 0px 2px 0 grey;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -66,16 +67,25 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
   height: 5vh;
+  color: white;
 }
 
 .task-form input {
   border: transparent;
-  background-color: white;
-  color: black;
-  outline: white;
+  background-color: black;
   border-radius: 6px;
-  width: 15vw;
+  width: 25vw;
   padding: 15px;
+  box-shadow: inset 0px 0px 2px 0 grey;
+  outline: grey;
+}
+
+.task-form input:hover {
+  background-color: #141414;
+}
+
+.task-form input::-moz-selection {
+  background-color: #141414;
 }
 
 .task-form button {
@@ -86,8 +96,7 @@
   text-align: center;
   display: flex;
   align-items: center;
-  color: white;
-  box-shadow: inset 0px 0px 2px 0 green;
+  box-shadow: inset 0px 0px 2px 0 grey;
 }
 
 .task-form button:hover {
@@ -104,7 +113,7 @@
   padding: 10px;
   margin-bottom: 15px;
   border-bottom: 2px solid transparent;
-  width: 35vw;
+  width: 50vw;
   height: 5vh;
   background-color: #141414;
   border-radius: 12px;
@@ -142,5 +151,89 @@
 }
 
 .edit-button:hover {
+  cursor: pointer;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login page */
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20vh;
+}
+
+.login input {
+  padding: 12px;
+  width: 25vw;
+  background-color: white;
+  color: black;
+  border: 0px;
+  outline: none;
+  border-radius: 2px;
+}
+
+.login button {
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 0px;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: inset 0px 0px 2px 0 grey;
+}
+
+.login button:hover {
+  text-shadow: 0px 0px 5px white;
+  background-color: #141414;
+  cursor: pointer;
+}
+
+/* Signup page */
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20vh;
+}
+
+.signup input {
+  padding: 12px;
+  width: 25vw;
+  background-color: white;
+  color: black;
+  border: 0px;
+  outline: none;
+  border-radius: 2px;
+}
+
+.signup button {
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 0px;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: inset 0px 0px 2px 0 grey;
+}
+
+.signup button:hover {
+  text-shadow: 0px 0px 5px white;
+  background-color: #141414;
   cursor: pointer;
 }

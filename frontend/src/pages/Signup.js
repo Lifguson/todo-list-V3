@@ -13,18 +13,18 @@ const Signup = () => {
   };
 
   return (
-    <form className="signup-form" onSubmit={handleSubmit}>
+    <form className="signup" onSubmit={handleSubmit}>
       <h3>Sign up</h3>
 
-      <label>Email:</label>
       <input
+        placeholder="email"
         type="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
 
-      <label>Password:</label>
       <input
+        placeholder="password"
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}

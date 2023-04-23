@@ -90,9 +90,6 @@ const TaskDetails = ({ task }) => {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Edit task</DialogTitle>
         <DialogContent>
-          {/* <DialogContentText>
-            Edit your task
-          </DialogContentText> */}
           <TextField
             autoFocus
             margin="dense"

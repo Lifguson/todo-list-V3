@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <header>
       <div className="container">
-        <Link to="/">
+        {/* <Link to="/">
           <h1>Task Tracker</h1>
-        </Link>
+        </Link> */}
         <nav className="nav">
           {user && (
             <div>
