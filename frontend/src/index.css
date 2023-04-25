@@ -1,8 +1,11 @@
 * {
   text-decoration-line: none;
+  font-family: satoshiRegular;
+}
+
+body {
   background-color: black;
   color: white;
-  font-family: satoshiRegular;
 }
 
 @font-face {
@@ -97,6 +100,7 @@
   display: flex;
   align-items: center;
   box-shadow: inset 0px 0px 2px 0 grey;
+  color: white;
 }
 
 .task-form button:hover {
@@ -125,8 +129,7 @@
 }
 
 .task-details:hover {
-  color: gray;
-  opacity: 90%;
+  opacity: 80%;
   transform: translateY(-5px);
   transition: 0.1s;
   border-bottom: 2px solid grey;
@@ -135,6 +138,11 @@
 
 .task-actions {
   background-color: #141414;
+}
+
+.modal-text > * {
+  color: white !important;
+  opacity: 50%;
 }
 
 .delete-button {

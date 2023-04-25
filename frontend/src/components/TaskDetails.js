@@ -87,10 +87,20 @@ const TaskDetails = ({ task }) => {
           sx={{ "& :hover": { color: "orange" } }}
         />
       </div>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            backgroundColor: "#141414",
+            color: "white",
+          },
+        }}
+      >
         <DialogTitle>Edit task</DialogTitle>
         <DialogContent>
           <TextField
+            className="modal-text"
             autoFocus
             margin="dense"
             id="name"
@@ -104,7 +114,7 @@ const TaskDetails = ({ task }) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleEdit}>Confirm Edit</Button>
+          <Button onClick={handleEdit}>Confirm</Button>
         </DialogActions>
       </Dialog>
     </div>
