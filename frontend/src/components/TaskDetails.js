@@ -94,17 +94,46 @@ const TaskDetails = ({ task }) => {
       style={open ? { boxShadow: "inset 0px 0px 2px 0 orange" } : {}}
     >
       <div className="task-segment">
-        {priority && (
+        {task.priority && (
           <span className="priority-icons">
-            {priority === "Low" && <PriorityHighIcon sx={{ scale: ".9" }} />}
-            {priority === "Mid" && [
-              <PriorityHighIcon sx={{ scale: ".8" }} />,
-              <PriorityHighIcon sx={{ scale: ".8" }} />,
+            {task.priority === "Low" && (
+              <PriorityHighIcon
+                sx={{ fontSize: "large", margin: "-5px", color: "green" }}
+              />
+            )}
+            {task.priority === "Mid" && [
+              <PriorityHighIcon
+                sx={{ fontSize: "large", margin: "-5px", color: "yellow" }}
+              />,
+              <PriorityHighIcon
+                sx={{ fontSize: "large", margin: "-5px", color: "yellow" }}
+              />,
             ]}
-            {priority === "High" && [
-              <PriorityHighIcon sx={{ scale: ".7" }} />,
-              <PriorityHighIcon sx={{ scale: ".7" }} />,
-              <PriorityHighIcon sx={{ scale: ".7" }} />,
+            {task.priority === "High" && [
+              <PriorityHighIcon
+                sx={{
+                  fontSize: "large",
+                  margin: "-5px",
+                  color: "red",
+                  opacity: "50%",
+                }}
+              />,
+              <PriorityHighIcon
+                sx={{
+                  fontSize: "large",
+                  margin: "-5px",
+                  color: "red",
+                  opacity: "50%",
+                }}
+              />,
+              <PriorityHighIcon
+                sx={{
+                  fontSize: "large",
+                  margin: "-5px",
+                  color: "red",
+                  opacity: "50%",
+                }}
+              />,
             ]}
           </span>
         )}
@@ -120,6 +149,7 @@ const TaskDetails = ({ task }) => {
           onClick={handleClickOpen}
           className="edit-button"
           sx={{ "& :hover": { color: "orange" } }}
+          style={open ? { color: "orange" } : {}}
         />
       </div>
       <Dialog
@@ -146,7 +176,6 @@ const TaskDetails = ({ task }) => {
         >
           <TextField
             className="modal-text"
-            autoFocus
             margin="dense"
             id="name"
             label="Task Name"
@@ -165,6 +194,7 @@ const TaskDetails = ({ task }) => {
                 Priority
               </InputLabel>
               <Select
+                className="modal-text"
                 labelId="select-label"
                 id="select"
                 value={priority}
