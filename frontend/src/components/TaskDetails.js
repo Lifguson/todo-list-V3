@@ -9,12 +9,22 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const TaskDetails = ({ task }) => {
   const { dispatch } = useTasksContext();
   const { user } = useAuthContext();
   const [open, setOpen] = useState(false);
   const [newTaskName, setNewTaskName] = useState("");
+  const [priority, setPriority] = useState("");
+
+  const handlePriority = (e) => {
+    setPriority(e.target.value);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -53,11 +63,16 @@ const TaskDetails = ({ task }) => {
       return;
     }
 
+    const updatedTask = {
+      taskName: newTaskName ? newTaskName : task.taskName,
+      priority,
+    };
+
     const response = await fetch(
       "http://localhost:3000/api/tasks/" + task._id,
       {
         method: "PATCH",
-        body: JSON.stringify({ taskName: newTaskName }),
+        body: JSON.stringify(updatedTask),
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,
@@ -73,7 +88,10 @@ const TaskDetails = ({ task }) => {
   };
 
   return (
-    <div className="task-details">
+    <div
+      className="task-details"
+      style={open ? { boxShadow: "inset 0px 0px 2px 0 orange" } : {}}
+    >
       <h4>{task.taskName}</h4>
       <div className="task-actions">
         <DeleteIcon
@@ -94,11 +112,21 @@ const TaskDetails = ({ task }) => {
           style: {
             backgroundColor: "#141414",
             color: "white",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
           },
         }}
       >
         <DialogTitle>Edit task</DialogTitle>
-        <DialogContent>
+        <DialogContent
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "40px",
+          }}
+        >
           <TextField
             className="modal-text"
             autoFocus
@@ -111,6 +139,31 @@ const TaskDetails = ({ task }) => {
             value={newTaskName}
             onChange={(e) => setNewTaskName(e.target.value)}
           />
+          <Box sx={{ minWidth: 120, color: "white" }}>
+            <FormControl variant="standard" fullWidth sx={{}}>
+              <InputLabel
+                id="select-label"
+                sx={{ color: "white", opacity: "90%" }}
+              >
+                Priority
+              </InputLabel>
+              <Select
+                labelId="select-label"
+                id="select"
+                value={priority}
+                label="Priority"
+                onChange={handlePriority}
+                sx={{ color: "white" }}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={"Low"}>Low</MenuItem>
+                <MenuItem value={"Mid"}>Mid</MenuItem>
+                <MenuItem value={"High"}>High</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>

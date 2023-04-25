@@ -12,7 +12,10 @@ const taskSchema = new Schema(
       type: Boolean,
       required: false,
     },
-
+    priority: {
+      type: String,
+      required: false,
+    },
     user_id: {
       type: String,
       required: true,
