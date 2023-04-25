@@ -14,6 +14,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
 
 const TaskDetails = ({ task }) => {
   const { dispatch } = useTasksContext();
@@ -92,7 +93,23 @@ const TaskDetails = ({ task }) => {
       className="task-details"
       style={open ? { boxShadow: "inset 0px 0px 2px 0 orange" } : {}}
     >
-      <h4>{task.taskName}</h4>
+      <div className="task-segment">
+        {priority && (
+          <span className="priority-icons">
+            {priority === "Low" && <PriorityHighIcon sx={{ scale: ".9" }} />}
+            {priority === "Mid" && [
+              <PriorityHighIcon sx={{ scale: ".8" }} />,
+              <PriorityHighIcon sx={{ scale: ".8" }} />,
+            ]}
+            {priority === "High" && [
+              <PriorityHighIcon sx={{ scale: ".7" }} />,
+              <PriorityHighIcon sx={{ scale: ".7" }} />,
+              <PriorityHighIcon sx={{ scale: ".7" }} />,
+            ]}
+          </span>
+        )}
+        <h4>{task.taskName}</h4>
+      </div>
       <div className="task-actions">
         <DeleteIcon
           onClick={handleDelete}

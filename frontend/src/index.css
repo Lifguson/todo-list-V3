@@ -129,6 +129,15 @@ body {
   background-color: #141414;
 }
 
+.task-segment {
+  display: flex;
+  align-items: center;
+}
+
+.priority-icons {
+  display: flex;
+}
+
 .task-details:hover {
   opacity: 90%;
   transform: translateY(-5px);
