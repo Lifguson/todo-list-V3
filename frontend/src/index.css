@@ -28,6 +28,11 @@ body {
   display: flex;
 }
 
+.nav a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 .nav div {
   display: flex;
   align-items: center;
@@ -36,6 +41,30 @@ body {
 
 .nav span {
   margin-right: 10px;
+}
+
+.link {
+  border: 0px;
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 2px 0 grey;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 4rem;
+  justify-content: center;
+}
+
+.link:hover {
+  text-shadow: 0px 0px 2px white;
+  cursor: pointer;
+  background-color: #141414;
+}
+
+.link:active {
+  transform: translateY(2px);
 }
 
 .nav button {
@@ -54,6 +83,10 @@ body {
   text-shadow: 0px 0px 2px white;
   cursor: pointer;
   background-color: #141414;
+}
+
+.nav button:active {
+  transform: translateY(2px);
 }
 
 .home {
@@ -105,10 +138,13 @@ body {
 }
 
 .task-form button:hover {
-  /* transform: translateY(-2px); */
   text-shadow: 0px 0px 2px white;
   background-color: #141414;
   cursor: pointer;
+}
+
+.task-form button:active {
+  transform: translateY(2px);
 }
 
 .task-details {
@@ -211,12 +247,17 @@ body {
   align-items: center;
   width: 100%;
   box-shadow: inset 0px 0px 2px 0 grey;
+  color: white;
 }
 
 .login button:hover {
-  text-shadow: 0px 0px 5px white;
+  text-shadow: 0px 0px 2px white;
   background-color: #141414;
   cursor: pointer;
+}
+
+.login button:active {
+  transform: translateY(2px);
 }
 
 /* Signup page */
@@ -250,10 +291,15 @@ body {
   align-items: center;
   width: 100%;
   box-shadow: inset 0px 0px 2px 0 grey;
+  color: white;
 }
 
 .signup button:hover {
-  text-shadow: 0px 0px 5px white;
+  text-shadow: 0px 0px 2px white;
   background-color: #141414;
   cursor: pointer;
+}
+
+.signup button:active {
+  transform: translateY(2px);
 }
