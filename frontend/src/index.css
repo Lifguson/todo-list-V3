@@ -147,6 +147,12 @@ body {
   transform: translateY(2px);
 }
 
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .task-details {
   display: flex;
   align-items: center;
