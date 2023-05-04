@@ -51,19 +51,32 @@ const Home = () => {
       <TaskForm />
 
       <div className="tasks">
-        <FormControl
+        {/* <FormControl
           sx={{
             backgroundColor: "#141414",
             width: "10vw",
             marginBottom: "15px",
             boxShadow: "inset 0px 0px 2px 0 grey",
             borderRadius: "4px",
-            height: "5vh",
+            fontFamily: "satoshiRegular",
+            height: "6vh",
           }}
         >
-          <InputLabel sx={{ color: "white" }}>Filter</InputLabel>
+          <InputLabel
+            sx={{
+              color: "white",
+              fontFamily: "satoshiRegular",
+              fontSize: "14px",
+            }}
+          >
+            Filter by priority
+          </InputLabel>
           <Select
-            sx={{ height: "5vh", color: "white" }}
+            sx={{
+              color: "white",
+              fontFamily: "satoshiRegular",
+              height: "6vh",
+            }}
             multiple
             value={selected}
             onChange={selectionChangeHandler}
@@ -73,35 +86,27 @@ const Home = () => {
                   <Chip
                     key={value}
                     label={value}
-                    sx={{ color: "white", backgroundColor: "black" }}
+                    sx={{
+                      color: "white",
+                      backgroundColor: "gray",
+                      fontFamily: "satoshiRegular",
+                    }}
                   />
                 ))}
               </div>
             )}
           >
-            <MenuItem value={"Low"}>Low</MenuItem>
-            <MenuItem value={"Mid"}>Mid</MenuItem>
-            <MenuItem value={"High"}>High</MenuItem>
+            <MenuItem value={"Low"} sx={{ fontFamily: "satoshiRegular" }}>
+              Low
+            </MenuItem>
+            <MenuItem value={"Mid"} sx={{ fontFamily: "satoshiRegular" }}>
+              Mid
+            </MenuItem>
+            <MenuItem value={"High"} sx={{ fontFamily: "satoshiRegular" }}>
+              High
+            </MenuItem>
           </Select>
-        </FormControl>
-        {/* <Autocomplete
-
-          disablePortal
-          id="combo-box"
-          options={priorities}
-          sx={{
-            backgroundColor: "#141414",
-            borderRadius: "10px",
-            boxShadow: "inset 0px 0px 2px 0 grey",
-            width: "10vw",
-            height: "5vh",
-            marginBottom: "15px",
-            textAlign: "center",
-          }}
-          renderInput={(params) => (
-            <TextField {...params} label="Filter by priority" />
-          )}
-        /> */}
+        </FormControl> */}
 
         {tasks &&
           tasks.map((task) => (

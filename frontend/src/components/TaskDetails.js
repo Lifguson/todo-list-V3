@@ -105,27 +105,8 @@ const TaskDetails = ({ task }) => {
               <PriorityHighIcon
                 sx={{ fontSize: "large", margin: "-5px", color: "yellow" }}
               />,
-              <PriorityHighIcon
-                sx={{ fontSize: "large", margin: "-5px", color: "yellow" }}
-              />,
             ]}
             {task.priority === "High" && [
-              <PriorityHighIcon
-                sx={{
-                  fontSize: "large",
-                  margin: "-5px",
-                  color: "red",
-                  opacity: "50%",
-                }}
-              />,
-              <PriorityHighIcon
-                sx={{
-                  fontSize: "large",
-                  margin: "-5px",
-                  color: "red",
-                  opacity: "50%",
-                }}
-              />,
               <PriorityHighIcon
                 sx={{
                   fontSize: "large",
