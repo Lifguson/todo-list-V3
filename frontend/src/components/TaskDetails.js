@@ -23,9 +23,9 @@ const TaskDetails = ({ task }) => {
   const [newTaskName, setNewTaskName] = useState("");
   const [priority, setPriority] = useState("");
 
-  const handlePriority = (e) => {
-    setPriority(e.target.value);
-  };
+  // const handlePriority = (e) => {
+  //   setPriority(e.target.value);
+  // };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -66,7 +66,7 @@ const TaskDetails = ({ task }) => {
 
     const updatedTask = {
       taskName: newTaskName ? newTaskName : task.taskName,
-      priority,
+      priority: priority ? priority : task.priority,
     };
 
     const response = await fetch(
@@ -180,7 +180,7 @@ const TaskDetails = ({ task }) => {
                 id="select"
                 value={priority}
                 label="Priority"
-                onChange={handlePriority}
+                onChange={(e) => setPriority(e.target.value)}
                 sx={{ color: "white" }}
               >
                 <MenuItem value="">
